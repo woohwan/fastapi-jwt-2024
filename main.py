@@ -98,7 +98,7 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
-@app.get("user/current", response_model=User)
+@app.get("/user/current", response_model=User)
 async def current_user_profile(current_user: Annotated[User,
                                                        Depends(get_current_user)]):
     """Fetch current user"""
